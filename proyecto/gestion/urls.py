@@ -1,7 +1,7 @@
 """
 URL configuration for proyecto project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The urlpatterns list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
 Examples:
 Function views
@@ -14,12 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.shortcuts import redirect
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', lambda request: redirect('lista_autores')),  
-    path('', include('gestion.urls')),
+    path('autores/', views.lista_autores, name='lista_autores'),
+    path('autores/crear/', views.crear_autor, name='crear_autor'),
+    path('autores/editar/<int:pk>/', views.editar_autor, name='editar_autor'),
+    path('autores/eliminar/<int:pk>/', views.eliminar_autor, name='eliminar_autor'),
 ]
