@@ -1,0 +1,30 @@
+<h1>Libros</h1>
+
+<a href="{% url 'crear_libro' %}">Agregar Libro</a>
+
+<ul>
+{% for libro in libros %}
+    <li>
+        {{ libro.titulo }} - {{ libro.autor }}
+        <a href="{% url 'editar_libro' libro.pk %}">Editar</a>
+        <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
+    </li>
+{% endfor %}
+</ul>
+📄 libro_form.html
+<h1>Formulario Libro</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+📄 libro_confirm_delete.html
+<h1>Eliminar Libro</h1>
+
+<p>¿Desea eliminar {{ libro.titulo }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
