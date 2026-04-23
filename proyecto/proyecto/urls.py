@@ -16,10 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
 
 urlpatterns = [
+    path('', include('gestion.urls')),  # 👈 ahora sí entra al lobby
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('lista_autores')),  
-    path('', include('gestion.urls')),
 ]

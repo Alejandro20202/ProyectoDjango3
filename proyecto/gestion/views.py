@@ -81,3 +81,5 @@ def eliminar_autor(request, pk):
         autor.delete()
         return redirect('lista_autores')
     return render(request, 'gestion/autor_confirm_delete.html', {'autor': autor})
+def lobby(request):
+    return render(request, 'gestion/lobby.html')

@@ -2,6 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
+    # 👇 LOBBY (página principal)
+    path('', views.lobby, name='lobby'),
+
     # -------------------------
     # LIBROS
     # -------------------------

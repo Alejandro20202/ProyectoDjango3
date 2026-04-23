@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height: 100vh;
+        }
+        .card {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="text-center">
+
+        <h1 class="mb-4 text-white">📚 Sistema de Biblioteca</h1>
+        <p class="text-white mb-5">Selecciona una opción</p>
+
+        <div class="row">
+
+            <!-- LIBROS -->
+            <div class="col-md-6 mb-3">
+                <div class="card p-4 shadow">
+                    <h3>📖 Libros</h3>
+                    <p>Gestionar libros</p>
+                    <a href="{% url 'lista_libros' %}" class="btn btn-primary w-100">
+                        Ir a Libros
+                    </a>
+                </div>
+            </div>
+
+            <!-- AUTORES -->
+            <div class="col-md-6 mb-3">
+                <div class="card p-4 shadow">
+                    <h3>✍️ Autores</h3>
+                    <p>Gestionar autores</p>
+                    <a href="{% url 'lista_autores' %}" class="btn btn-success w-100">
+                        Ir a Autores
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ADMIN -->
+        <div class="mt-4">
+            <a href="/admin/" class="btn btn-dark">
+                🔐 Ir al Admin
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
