@@ -8,7 +8,7 @@ class Autor(models.Model):
     fecha_nacimiento = models.DateField()
     biografia = models.TextField(blank=True, null=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.nombre
 
 
@@ -20,5 +20,5 @@ class Libro(models.Model):
     isbn = models.CharField(max_length=20, unique=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='libros')
 
-    def _str_(self):
+    def __str__(self):
         return self.titulo
